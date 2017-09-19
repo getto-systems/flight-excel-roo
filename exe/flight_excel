@@ -1,0 +1,5 @@
+# vi: set ft=ruby :
+
+require "flight/excel/roo"
+
+puts Flight::Excel::Roo::VERSION
