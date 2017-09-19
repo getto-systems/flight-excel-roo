@@ -1,0 +1,16 @@
+.envrc
+.git
+.gitignore
+.travis.yml
+Gemfile
+Gemfile.lock
+LICENSE
+README.md
+Rakefile
+bin
+exe
+flight-excel-roo.gemspec
+lib
+test
+tmp
+vendor
