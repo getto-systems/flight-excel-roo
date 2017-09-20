@@ -3,7 +3,8 @@ require "flight/excel/roo/version"
 module Flight
   module Excel
     module Roo
-      # Your code goes here...
+      autoload :CLI,    "flight/excel/roo/cli"
+      autoload :Parser, "flight/excel/roo/parser"
     end
   end
 end

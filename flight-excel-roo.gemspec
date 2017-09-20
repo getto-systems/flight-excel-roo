@@ -33,5 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
 
+  spec.add_dependency "thor", "~> 0.20"
   spec.add_dependency "roo", "~> 2.7"
+  spec.add_dependency "roo-xls", "~> 1.1"
 end
