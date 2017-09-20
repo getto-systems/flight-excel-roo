@@ -2,4 +2,4 @@
 
 require "flight/excel/roo"
 
-puts Flight::Excel::Roo::VERSION
+Flight::Excel::Roo::CLI.start
