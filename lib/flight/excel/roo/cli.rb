@@ -1,5 +1,6 @@
 require "thor"
 require "json"
+require "roo"
 
 module Flight::Excel::Roo
   class CLI < Thor
@@ -13,7 +14,8 @@ module Flight::Excel::Roo
       opts = JSON.parse(opts)
 
       data.each do |info|
-        input = File.join([opts["src"], info["file"]["name"]])
+        input = File.join([opts["src"], info["name"]])
+        output = File.join([opts["dest"], info["name"]])
 
         begin
           Parser.new(output).parse(
