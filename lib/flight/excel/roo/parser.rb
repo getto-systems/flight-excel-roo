@@ -9,16 +9,15 @@ module Flight::Excel::Roo
       @output = File.open(output, "w")
     end
 
-    def out(data)
-      @output.puts JSON.generate(data)
-    end
-
     def parse(input:,sheet:,header:,require_cols:,exclude_data:)
       parser(input).sheet(sheet).each(header) do |data|
-        if isValidData?(data, require_cols: require_cols, exclude_data: exclude_data)
-          out data
+        if data != header
+          if isValidData?(data, require_cols: require_cols, exclude_data: exclude_data)
+            out data
+          end
         end
       end
+      @output.close
     end
 
     private
@@ -40,6 +39,10 @@ module Flight::Excel::Roo
           return false
         end
         return true
+      end
+
+      def out(data)
+        @output.puts JSON.generate(data)
       end
   end
 end
